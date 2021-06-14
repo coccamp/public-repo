@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+
+    <!-- Google Fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font-awesome-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
+
+    <!-- AOS-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+      crossorigin="anonymous"
+    />
+
+    {% if swiper %}
+    <!-- Swiper-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.8/swiper-bundle.min.css"
+      integrity="sha512-eeBbzvdY28BPYqEsAv4GU/Mv48zr7l0cI6yhWyqhgRoNG3sr+Q2Fr6751bA04Cw8SGUawtVZlugHm5H1GOU/TQ=="
+      crossorigin="anonymous"
+    />
+    {% endif %}
+
+    <!-- Css da casa-->
+    <link rel="stylesheet" href="/css/main.min.css" />
+
+    <title>Coccamp | {{ pageTitle }}</title>
+  </head>
+
+  <body>
+    <!-- Header-->
+    <header class="header">
+      <div class="container header__container">
+        <!-- Logo-->
+        <a href="/" class="logo">
+          <img
+            src="/img/coccamp-logo.jpeg"
+            alt="Logo Coccamp"
+            class="logo__img"
+          />
+        </a>
+
+        <!-- Navbar Buttons-->
+        <div class="header__buttons header__buttons--mobile">
+          <button id="open" aria-label="Open Navigation" class="header__hamb">
+            <i class="fas fa-bars"></i>
+          </button>
+          <a href="{{ siteSettings.linkedin | url }}" target="_blank"
+            ><i class="fab fa-linkedin icon"></i
+          ></a>
+
+          <a href="/en" class="header__btn">EN-US</a>
+        </div>
+
+        <!-- Navbar pro MOBILE-->
+        <nav id="nav" class="nav" aria-label="Mobile Navigation">
+          <button
+            id="close"
+            aria-label="Close Navigation"
+            class="nav__btn-close"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a
+                href="/"
+                class="
+                  nav__link
+                  {%
+                  if
+                  page.url
+                  ==
+                  '/'
+                  %}nav__link--active{%
+                  endif
+                  %}
+                "
+                >Home</a
+              >
+            </li>
+            <li class="nav__item">
+              <a
+                href="/quem-somos"
+                class="
+                  nav__link
+                  {%
+                  if
+                  page.url
+                  ==
+                  '/quem-somos/'
+                  %}nav__link--active{%
+                  endif
+                  %}
+                "
+                >Who We Are</a
+              >
+            </li>
+            <li class="nav__item">
+              <a
+                href="/produtos"
+                class="
+                  nav__link
+                  {%
+                  if
+                  page.url
+                  ==
+                  '/produtos/'
+                  %}nav__link--active{%
+                  endif
+                  %}
+                "
+                >Coffees</a
+              >
+            </li>
+            <li class="nav__item">
+              <a
+                href="/contato"
+                class="
+                  nav__link
+                  {%
+                  if
+                  page.url
+                  ==
+                  '/contato/'
+                  %}nav__link--active{%
+                  endif
+                  %}
+                "
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Navbar pro DESKTOP-->
+        <nav class="nav-desktop" aria-label="Desktop Navigation">
+          <ul class="nav-desktop__list">
+            <li
+              class="
+                nav-desktop__item
+                {%
+                if
+                page.url
+                ==
+                '/quem-somos/'
+                %}nav-desktop__item--active{%
+                endif
+                %}
+              "
+            >
+              <a href="/quem-somos" class="nav-desktop__link">Who we are</a>
+            </li>
+            <li
+              class="
+                nav-desktop__item
+                {%
+                if
+                page.url
+                ==
+                '/produtos/'
+                %}nav-desktop__item--active{%
+                endif
+                %}
+              "
+            >
+              <a href="/produtos" class="nav-desktop__link">Coffees</a>
+            </li>
+            <li
+              class="
+                nav-desktop__item
+                {%
+                if
+                page.url
+                ==
+                '/contato/'
+                %}nav-desktop__item--active{%
+                endif
+                %}
+              "
+            >
+              <a href="/contato" class="nav-desktop__link">Contact</a>
+            </li>
+          </ul>
+          <div class="header__buttons">
+            <a
+              href="/contato/#form-section"
+              class="header__btn header__btn--partner"
+              >Seja parceiro</a
+            >
+            <a
+              href="{{ siteSettings.linkedin | url }}"
+              target="_blank"
+              class="header__icon"
+            >
+              <img src="/img/linkedin.png" alt="Linkedin" />
+            </a>
+
+            <a href="/en" class="header__btn">EN-US</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <div>{{ eleventyComputed.pageTitle }} e {{ swiper }} e {{ title }}</div>
+      {{ content }}
+
+      <section class="section logos" data-aos="fade">
+        <div class="container logos__container">
+          <a href="#"
+            ><img src="/img/logo-1.png" alt="Logo" class="logos__logo"
+          /></a>
+          <a href="#"
+            ><img src="/img/logo-2.jpeg" alt="Logo" class="logos__logo"
+          /></a>
+          <a href="#"
+            ><img src="/img/logo-3.png" alt="Logo" class="logos__logo"
+          /></a>
+          <a href="#"
+            ><img src="/img/logo-4.png" alt="Logo" class="logos__logo"
+          /></a>
+          <a href="#"
+            ><img src="/img/logo-5.jpeg" alt="Logo" class="logos__logo"
+          /></a>
+          <a href="#"
+            ><img src="/img/logo-6.png" alt="Logo" class="logos__logo"
+          /></a>
+        </div>
+      </section>
+
+      <footer class="section footer" data-aos="fade-up">
+        <div class="container footer__container">
+          <div class="footer__pages">
+            <h3 class="footer__title">Páginas</h3>
+            <ul>
+              <li>
+                <a href="/quem-somos" class="footer__link"
+                  >{{ about.pageTitle }}</a
+                >
+              </li>
+              <li>
+                <a href="/contato/#form-section" class="footer__link"
+                  >Seja nosso parceiro</a
+                >
+              </li>
+              <li>
+                <a href="/contato" class="footer__link"
+                  >{{ contact.pageTitle }}</a
+                >
+              </li>
+              <li>
+                <a href="/produtos" class="footer__link"
+                  >{{ productsPage.pageTitle }}</a
+                >
+              </li>
+              <li>
+                <a href="/" class="footer__link">Home</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer__contact">
+            <h3 class="footer__title">Contato</h3>
+            <p class="footer__text">{{ siteSettings.phone }}</p>
+            {% if pagination.href.next %}
+            <p class="footer__text">{{ siteSettings.phone2 }}</p>
+            {% endif %}
+            <p class="footer__text">{{ siteSettings.email }}</p>
+          </div>
+
+          <div class="footer__address">
+            <h3 class="footer__title">Endereço</h3>
+            <p class="footer__text">{{ siteSettings.address }}</p>
+          </div>
+
+          <div class="footer__media">
+            <h3 class="footer__title">Media</h3>
+            <ul>
+              <li>
+                <a href="{{ siteSettings.linkedin | url }}" target="_blank"
+                  ><i class="fab fa-linkedin icon"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#"><i class="fab fa-whatsapp-square icon"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Animation on Scroll-->
+    {% include _aos-init.html %}
+
+    <!-- Per-page scripts-->
+    {% if page == 'home' %} {% include _swiper-home.html %} {% endif %} {% if
+    page == 'products' %} {% include _swiper-products.html %} {% endif %}
+
+    <script src="/js/index.js"></script>
+  </body>
+</html>
