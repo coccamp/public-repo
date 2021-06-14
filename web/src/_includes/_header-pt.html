@@ -1,0 +1,24 @@
+<header class="header">
+  <div class="container header__container">
+    <a href="/" class="logo">
+      <img src="/img/coccamp-logo.jpeg" alt="Logo Coccamp" class="logo__img" />
+    </a>
+
+    <div class="header__buttons header__buttons--mobile">
+      <button id="open" aria-label="Open Navigation" class="header__hamb">
+        <i class="fas fa-bars"></i>
+      </button>
+      <a href="{{ siteSettings.linkedin | url }}" target="_blank"
+        ><i class="fab fa-linkedin icon"></i
+      ></a>
+
+      <a href="/en" class="header__btn">EN-US</a>
+    </div>
+
+    <!-- Navbar pro MOBILE-->
+    {% include _mobile-navbar-pt.njk %}
+
+    <!-- Navbar pro DESKTOP-->
+    {% include _desktop-navbar-pt.njk %}
+  </div>
+</header>

@@ -1,0 +1,66 @@
+.contact {
+  background-image: linear-gradient(to top, $color-gray 63%, transparent 0);
+
+  @include respond(bp-600) {
+    background: none;
+  }
+
+  &__flex {
+    display: flex;
+    flex-direction: column;
+
+    @include respond(bp-900) {
+      flex-direction: row;
+      align-items: center;
+      & > * {
+        width: 49.9%;
+      }
+    }
+  }
+
+  &__img {
+    max-height: 350px;
+    margin-bottom: 2rem;
+    order: -1;
+
+    @include respond(bp-600) {
+      margin-bottom: 7rem;
+    }
+
+    @include respond(bp-900) {
+      order: 0;
+    }
+
+    img {
+      max-height: inherit;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__text {
+    p {
+      max-width: 600px;
+      text-align: justify;
+    }
+
+    @include respond(bp-900) {
+      display: flex;
+      justify-content: center;
+
+      p {
+        max-width: 420px;
+
+        @include respond(bp-900) {
+          padding-right: 6rem;
+        }
+      }
+    }
+  }
+}
+
+#form-section {
+  @include respond(bp-600) {
+    padding-top: 0;
+  }
+}

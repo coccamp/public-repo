@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    {% include _metadata.html %}
+
+    <!-- Google Fonts-->
+    {% include _gfont.html %}
+
+    <!-- Font-awesome-->
+    {% include _fa.html %}
+
+    <!-- AOS-->
+    {% include _aos.html %}
+
+    <!-- Swiper-->
+    {% include _swiper.html %}
+
+    <!-- Css da casa-->
+    <link rel="stylesheet" href="/css/main.min.css" />
+
+    <title>Coccamp | {{ home.pageTitle.en }}</title>
+  </head>
+
+  <body>
+    <!-- Header-->
+    {% include _header-en.html %}
+
+    <main class="main">
+      <section
+        class="hero hero--home"
+        data-aos="zoom-in"
+        data-aos-duration="1000"
+      >
+        <div class="container">
+          <h1 class="hero__title">{{ home.heroText.title.en }}</h1>
+          <p class="hero__subtitle">{{ home.heroText.subtitle.en }}</p>
+        </div>
+        <div class="hero__chevron">
+          <a href="#first-section">
+            <img src="/img/header-chevron-bottom.png" alt="Scroll Down"
+          /></a>
+        </div>
+      </section>
+
+      <section id="first-section" class="section what">
+        <div class="container">
+          <div class="what__grid">
+            <div class="what__text-box" data-aos="fade-left">
+              {{ home.aboutText.en }}
+              <a href="/en/about-us" class="link">{{ home.aboutCTA.en }}</a>
+            </div>
+            <div
+              class="image-box-sm what__img what__img--main"
+              data-aos="fade-right"
+            >
+              <img
+                src="/img/what-principal.webp"
+                alt="Nós produzimos o melhor café"
+              />
+            </div>
+            <div class="what__img what__img--2" data-aos="fade-up">
+              <img
+                src="/img/what-grid-1.webp"
+                alt="Nós produzimos o melhor café"
+              />
+            </div>
+            <div class="what__img what__img--3" data-aos="fade-up">
+              <img
+                src="/img/what-grid-2.webp"
+                alt="Nós produzimos o melhor café"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="partners" data-aos="fade">
+        <div class="container container--large">
+          <!-- <h2 class="partners__title">Com quem trabalhamos</h2> -->
+          <!-- Slider main container -->
+          <div class="swiper-container" id="swiper-partners">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide swiper-slide-partners">
+                <a href="#">
+                  <img src="/img/slider-logo-1.png" alt="Parceiro" />
+                </a>
+              </div>
+              <div class="swiper-slide swiper-slide-partners">
+                <a href="#">
+                  <img src="/img/slider-logo-2.png" alt="Parceiro" />
+                </a>
+              </div>
+              <div class="swiper-slide swiper-slide-partners">
+                <a href="#">
+                  <img src="/img/slider-logo-1.png" alt="Parceiro" />
+                </a>
+              </div>
+              <div class="swiper-slide swiper-slide-partners">
+                <a href="#">
+                  <img src="/img/slider-logo-2.png" alt="Parceiro" />
+                </a>
+              </div>
+              <div class="swiper-slide swiper-slide-partners">
+                <a href="#">
+                  <img src="/img/slider-logo-1.png" alt="Parceiro" />
+                </a>
+              </div>
+            </div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section products">
+        <div class="container products__container">
+          <div class="products__head" data-aos="fade-right">
+            <p class="products__text--small">{{ home.productsWatermark.en }}</p>
+            <h2 class="products__title">{{ home.productsTitle.en }}</h2>
+            <div class="products__img">
+              <img src="/img/products.webp" alt="Products" />
+            </div>
+          </div>
+          <div class="products__body" data-aos="fade-left">
+            {{ home.productsText.en }}
+            <a href="/en/products" class="link">{{ home.productsCTA.en }}</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="social">
+        <div class="container">
+          <!-- Slider main container -->
+          <div class="swiper-container" id="swiper-social">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div
+                class="swiper-slide swiper-slide-social"
+                data-aos="flip-left"
+              >
+                <div class="linkedin-box">
+                  <div class="linkedin-box__head">
+                    <img src="/img/linked.png" alt="Linkedin" />
+                  </div>
+                  <div class="linkedin-box__body">
+                    <p>
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                      Quasi quo ex culpa officia cupiditate, ipsum sint dolore
+                      magnam!
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="swiper-slide swiper-slide-social"
+                data-aos="flip-right"
+              >
+                <div class="linkedin-box">
+                  <div class="linkedin-box__head">
+                    <img src="/img/linked.png" alt="Linkedin" />
+                  </div>
+                  <div class="linkedin-box__body">
+                    <p>
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Numquam, a incidunt. Dolores, ducimus id!
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="swiper-slide swiper-slide-social"
+                data-aos="flip-left"
+              >
+                <div class="linkedin-box">
+                  <div class="linkedin-box__head">
+                    <img src="/img/linked.png" alt="Linkedin" />
+                  </div>
+                  <div class="linkedin-box__body">
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Debitis, numquam! Praesentium, veniam. Neque, rem ut.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Brand logos-->
+      {% include _brands.html %}
+
+      <!-- Footer-->
+      {% include _footer-en.html %}
+    </main>
+
+    <!-- Animation on Scroll-->
+    {% include _aos-init.html %}
+
+    <!-- Swiper-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+      const swiperPartners = new Swiper('#swiper-partners', {
+        slidesPerView: 'auto',
+        loop: true,
+
+        // Navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+
+      const swiperSocial = new Swiper('#swiper-social', {
+        slidesPerView: 'auto',
+        spaceBetween: 10,
+        loop: true,
+        centeredSlides: true,
+
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      });
+    </script>
+
+    <!-- JS da casa-->
+    {% include _js.html %}
+  </body>
+</html>

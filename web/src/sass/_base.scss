@@ -1,0 +1,67 @@
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 50%;
+  scroll-behavior: smooth;
+
+  @include respond(bp-600) {
+    // width >600?
+    font-size: 56.25%; //1 rem = 9px, 9/16 = 50%
+  }
+
+  @include respond(bp-900) {
+    // width >900?
+    font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+  }
+}
+
+body {
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.6rem;
+  color: $color-primary-light;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.1;
+}
+
+p {
+  letter-spacing: 0.4px;
+  font-size: 1.6rem;
+
+  @include respond(bp-1800) {
+    font-size: 1.8rem;
+  }
+}
+
+.hidden {
+  display: none;
+}

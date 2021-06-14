@@ -1,0 +1,124 @@
+.who {
+  background: linear-gradient(to top, $color-gray 40%, white 0%);
+  @include respond(bp-600) {
+    background: none;
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include respond(bp-600) {
+      flex-direction: row;
+      &:first-child {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  &__img {
+    margin-bottom: 4rem;
+    @include respond(bp-600) {
+      width: 60%;
+      max-height: 340px;
+      max-width: 520px;
+
+      img {
+        max-height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    @include respond(bp-1200) {
+      max-height: 400px;
+    }
+
+    &--1 {
+      @include respond(bp-600) {
+        margin-right: 2rem;
+      }
+    }
+
+    &--2 {
+      @include respond(bp-600) {
+        order: 2;
+        margin-left: 2rem;
+        align-self: flex-start;
+      }
+    }
+  }
+
+  &__text {
+    text-align: justify;
+    margin-bottom: 4rem;
+
+    @include respond(bp-600) {
+      width: 40%;
+    }
+
+    @media (min-width: 600px) and (max-width: 720px) {
+      font-size: 1.6rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    &--1 {
+      @include respond(bp-600) {
+        margin-left: 2rem;
+      }
+
+      @include respond(bp-720) {
+        padding: 2rem 0;
+      }
+
+      @include respond(bp-900) {
+        padding-left: 2rem;
+      }
+    }
+
+    &--2 {
+      @media (max-width: 600px) {
+        margin-bottom: 0;
+      }
+      @include respond(bp-600) {
+        margin-right: 2rem;
+        margin-top: auto;
+      }
+
+      @include respond(bp-900) {
+        padding-right: 2rem;
+      }
+    }
+  }
+
+  &__button {
+    align-self: flex-start;
+    position: relative;
+    font-size: 1.8rem;
+    margin-top: 4rem;
+
+    @media screen and (min-width: 1350px) {
+      padding: 1.2rem 6rem !important;
+    }
+
+    &::before {
+      content: '';
+      background-color: $color-primary-dark;
+
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      right: 0;
+      left: -90%;
+
+      @media screen and (min-width: 1350px) {
+        display: none;
+      }
+    }
+  }
+}

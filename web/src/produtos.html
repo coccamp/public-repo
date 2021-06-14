@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    {% include _metadata.html %}
+
+    <!-- Google Fonts-->
+    {% include _gfont.html %}
+
+    <!-- Font-awesome-->
+    {% include _fa.html %}
+
+    <!-- AOS-->
+    {% include _aos.html %}
+
+    <!-- Swiper-->
+    {% include _swiper.html %}
+
+    <!-- Css da casa-->
+    {% include _css.html %}
+
+    <title>Coccamp | {{ productsPage.pageTitle.pt }}</title>
+  </head>
+
+  <body>
+    <!-- Header-->
+    {% include _header-pt.html %}
+
+    <main class="main">
+      <section
+        class="hero hero--products"
+        data-aos="zoom-in"
+        data-aos-duration="1000"
+      >
+        <div class="container">
+          <h1 class="hero__title">{{ productsPage.heroText.title.pt }}</h1>
+          <p class="hero__subtitle">{{ productsPage.heroText.subtitle.pt }}</p>
+        </div>
+        <div class="hero__chevron">
+          <a href="#first-section">
+            <img src="/img/header-chevron-bottom.png" alt="Scroll Down"
+          /></a>
+        </div>
+      </section>
+
+      <div class="container container--large">
+        <section id="first-section" class="section">
+          {% include _products-pt.njk %}
+        </section>
+        <h4 class="products__h4" data-aos="fade-right">
+          {{ productsPage.textCta.pt }}
+        </h4>
+        <a
+          href="/contato/#form-section"
+          class="button btn-products"
+          data-aos="fade-right"
+          >{{ productsPage.textPartner.pt }}</a
+        >
+        <a href="/contato/#form-section" class="button" data-aos="fade-right"
+          >{{ productsPage.textClient.pt }}</a
+        >
+      </div>
+
+      <!-- Brand logos-->
+      {% include _brands.html %}
+
+      <!-- Footer-->
+      {% include _footer-pt.html %}
+    </main>
+
+    <!-- Animation on Scroll-->
+    {% include _aos-init.html %}
+
+    <!-- Swiper-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+      const swiperProducts = new Swiper('#swiper-products', {
+        slidesPerView: 'auto',
+        spaceBetween: 10,
+        loop: true,
+        centeredSlides: true,
+
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      });
+    </script>
+
+    <!-- JS da casa-->
+    {% include _js.html %}
+  </body>
+</html>

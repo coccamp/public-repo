@@ -1,0 +1,21 @@
+<nav class="nav-desktop" aria-label="Desktop Navigation">
+  <ul class="nav-desktop__list">
+    <li class="nav-desktop__item {% if page.url == '/en/about-us/' %}nav-desktop__item--active{% endif %}">
+      <a href="/en/about-us/" class="nav-desktop__link">{{ about.pageTitle.en }}</a>
+    </li>
+    <li class="nav-desktop__item {% if page.url == '/en/products/' %}nav-desktop__item--active{% endif %}">
+      <a href="/en/products/" class="nav-desktop__link">{{ productsPage.pageTitle.en }}</a>
+    </li>
+    <li class="nav-desktop__item {% if page.url == '/en/contact/' %}nav-desktop__item--active{% endif %}">
+      <a href="/en/contact/" class="nav-desktop__link">{{ contact.pageTitle.en }}</a>
+    </li>
+  </ul>
+  <div class="header__buttons">
+      <a href="/en/contact/#form-section" class="header__btn header__btn--partner">Be our partner</a>
+      <a href="{{ siteSettings.linkedin | url }}" target="_blank" class="header__icon">
+        <img src="/img/linkedin.png" alt="Linkedin">
+      </a>
+
+      <a href="/" class="header__btn">PT-BR</a>
+  </div>
+</nav>

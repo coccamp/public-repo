@@ -1,0 +1,392 @@
+.header {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 2.8rem 0;
+  }
+
+  &__hamb {
+    font-size: 3rem;
+    border: 0;
+    background-color: transparent;
+    color: inherit;
+    cursor: pointer;
+    order: 2;
+
+    &--close {
+      position: fixed;
+      right: 10%;
+    }
+
+    @media (min-width: 601px) {
+      display: none;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    @media (min-width: 601px) {
+      margin-left: 4.2rem;
+      margin-top: 4px;
+    }
+
+    .icon {
+      @media (min-width: 900px) {
+        font-size: 2.6rem;
+      }
+    }
+
+    &--mobile {
+      @media (min-width: 601px) {
+        display: none;
+      }
+    }
+  }
+
+  &__btn {
+    color: #fff;
+    margin: 0 8px;
+    padding: 2px 4px;
+    margin-top: -3px;
+    text-decoration: none;
+    background: $color-primary-dark;
+    font-size: 1.2rem;
+    border-radius: 2px;
+
+    @media (min-width: 900px) {
+      padding: 2px 8px;
+    }
+
+    @include respond(bp-1200) {
+      font-size: 1.3rem;
+      padding: 2px 8px;
+    }
+
+    &--partner {
+      @media (max-width: 900px) {
+        display: none;
+      }
+    }
+  }
+
+  &__icon {
+    height: 22px;
+    margin-top: -3px;
+
+    @media (min-width: 1200px) {
+      height: 24px;
+    }
+
+    img {
+      height: 100%;
+    }
+  }
+}
+
+.logo {
+  &:link {
+    margin: 0;
+  }
+
+  &__img {
+    max-height: 46px;
+    @include respond(bp-900) {
+      max-height: 64px;
+    }
+  }
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  background-color: $color-white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-100%);
+  transition: transform 0.4s;
+  @include respond(bp-600) {
+    display: none;
+  }
+
+  &--open {
+    transform: translateY(0);
+  }
+
+  &__btn-close {
+    font-size: 3rem;
+    border: 0;
+    background-color: transparent;
+    color: inherit;
+    cursor: pointer;
+    position: absolute;
+    top: 4rem;
+    right: 13%;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__item {
+    margin: 3rem 0;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $color-primary-dark;
+    font-size: 2.4rem;
+    padding: 1rem 0;
+
+    &--active {
+      color: #bdbdbd;
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+      text-underline-offset: 0.7rem;
+    }
+  }
+}
+
+.nav-desktop {
+  display: flex;
+  @media (max-width: 600px) {
+    display: none;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    margin: 0 2rem;
+    font-size: 1.8rem;
+    position: relative;
+    &:last-child {
+      margin-right: 0;
+    }
+    @include respond(bp-900) {
+      margin: 0 3rem;
+    }
+    @include respond(bp-1200) {
+      font-size: 2rem;
+    }
+
+    &:hover::after {
+      transform: translateX(-50%) scale(1);
+    }
+
+    &::after {
+      content: '';
+      width: 35%;
+      left: 50%;
+      transform: translateX(-50%) scale(0);
+      bottom: -5px;
+      height: 1.8px;
+      background-color: $color-primary-dark;
+      position: absolute;
+      transition: transform 0.4s;
+    }
+
+    &--active {
+      &::after {
+        transform: translateX(-50%) scale(1);
+      }
+
+      &:hover::after {
+        transform: translateX(-50%) scale(1);
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $color-primary-dark;
+  }
+}
+
+.section {
+  padding: 6rem 0;
+  overflow: hidden;
+}
+
+.container {
+  width: 75%;
+  margin: 0 auto;
+  max-width: 1000px;
+
+  @include respond(bp-600) {
+    width: 85%;
+  }
+
+  @include respond(bp-1200) {
+    width: 80%;
+  }
+
+  &--flex {
+    display: flex;
+  }
+
+  &--grid {
+    display: grid;
+  }
+
+  &--large {
+    width: 85%;
+  }
+}
+
+.hero {
+  padding: 12rem 0;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+  margin-bottom: 2rem;
+
+  &--home {
+    background-image: url(../img/hero-home-mobile.webp);
+    @include respond(bp-600) {
+      background-image: url(../img/hero-home-desktop.webp);
+    }
+  }
+
+  &--who {
+    background-image: url(../img/hero-who-mobile.webp);
+    @include respond(bp-600) {
+      background-image: url(../img/hero-who-desktop.webp);
+    }
+  }
+
+  &--products {
+    background-image: url(../img/hero-products-mobile.webp);
+    @include respond(bp-600) {
+      background-image: url(../img/hero-products-desktop.webp);
+    }
+  }
+
+  &--contact {
+    background-image: url(../img/hero-contact-mobile.webp);
+    @include respond(bp-600) {
+      background-image: url(../img/hero-contact-desktop.webp);
+    }
+  }
+
+  color: #fff;
+
+  &__title {
+    font-size: 3.6rem;
+    margin-bottom: 3rem;
+    max-width: 200px;
+    text-transform: uppercase;
+
+    @include respond(bp-600) {
+      max-width: 300px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 2rem;
+    margin-bottom: 0;
+    max-width: 200px;
+    @include respond(bp-600) {
+      max-width: 300px;
+    }
+
+    @media (min-width: 300px) {
+      text-align: justify;
+    }
+  }
+
+  &__chevron {
+    position: absolute;
+    width: 5.5rem;
+    right: 6rem;
+    bottom: 0;
+  }
+}
+
+.body-text {
+  @media (max-width: 720px) {
+    font-size: 1.8rem;
+  }
+
+  @include respond(bp-1200) {
+    font-size: 1.7rem;
+  }
+}
+
+.footer {
+  background-color: $color-gray;
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 2rem;
+  }
+
+  &__pages {
+    li:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__text {
+    margin-bottom: 0;
+  }
+
+  &__address {
+    order: 2;
+    max-width: 200px;
+
+    @include respond(bp-720) {
+      order: 0;
+    }
+  }
+
+  &__media {
+    order: 1;
+
+    @include respond(bp-720) {
+      order: 0;
+    }
+    ul {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+}
+
+.icon {
+  color: $color-primary-dark;
+  font-size: 2.6rem;
+}

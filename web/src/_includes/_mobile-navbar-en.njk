@@ -1,0 +1,29 @@
+<nav id="nav" class="nav" aria-label="Mobile Navigation">
+  <button
+    id="close"
+    aria-label="Close Navigation"
+    class="nav__btn-close"
+  >
+    <i class="fas fa-times"></i>
+  </button>
+  <ul class="nav__list">
+    <li class="nav__item">
+      <a href="/en" class="nav__link {% if page.url == '/en' %}nav__link--active{% endif %}">Home</a>
+    </li>
+    <li class="nav__item">
+      <a href="/en/about-us" class="nav__link {% if page.url == '/en/about-us' %}nav__link--active{% endif %}">
+      {{ about.pageTitle.en }}
+      </a>
+    </li>
+    <li class="nav__item">
+      <a href="/en/products" class="nav__link {% if page.url == '/en/products' %}nav__link--active{% endif %}">
+      {{ productsPage.pageTitle.en }}
+      </a>
+    </li>
+    <li class="nav__item">
+      <a href="/en/contact" class="nav__link {% if page.url == '/en/contact/' %}nav__link--active{% endif %}">
+      {{ contact.pageTitle.en }}
+      </a>
+    </li>
+  </ul>
+</nav>

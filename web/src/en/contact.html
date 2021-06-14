@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    {% include _metadata.html %}
+
+    <!-- Google Fonts-->
+    {% include _gfont.html %}
+
+    <!-- Font-awesome-->
+    {% include _fa.html %}
+
+    <!-- AOS-->
+    {% include _aos.html %}
+
+    <!-- Css da casa-->
+    {% include _css.html %}
+
+    <!-- EmailJS-->
+    {% include _emailjs.html %}
+
+    <title>Coccamp | {{ contact.pageTitle.en }}</title>
+  </head>
+
+  <body>
+    <!-- Header-->
+    {% include _header-en.html %}
+
+    <main class="main">
+      <section
+        class="hero hero--contact"
+        data-aos="zoom-in"
+        data-aos-duration="1000"
+      >
+        <div class="container">
+          <h1 class="hero__title">{{ contact.heroText.title.en }}</h1>
+          <p class="hero__subtitle">{{ contact.heroText.subtitle.en }}</p>
+        </div>
+        <div class="hero__chevron">
+          <a href="#first-section">
+            <img src="/img/header-chevron-bottom.png" alt="Scroll Down"
+          /></a>
+        </div>
+      </section>
+
+      <section id="first-section" class="section contact">
+        <div class="container">
+          <div class="contact__flex">
+            <div class="contact__text" data-aos="fade-right">
+              {{ contact.contactText.en }}
+            </div>
+            <div class="contact__img image-box-lg" data-aos="fade-left">
+              <img src="/img/contact.jpeg" alt="Contact us" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="form-section">
+        <div class="container">
+          <div class="form__wrapper" data-aos="flip-up">
+            <h2 class="form__title">{{ contact.formCta.en }}</h2>
+
+            <!--FORM-->
+            <form id="contact-form" class="form">
+              <div class="form__group">
+                <input
+                  type="text"
+                  class="form__input"
+                  placeholder="Nome Completo"
+                  id="name"
+                  name="from_name"
+                  required
+                />
+                <label for="name" class="form__label">Nome Completo</label>
+              </div>
+
+              <div class="form__group">
+                <input
+                  type="email"
+                  class="form__input"
+                  placeholder="Email"
+                  id="email"
+                  name="from_email"
+                  required
+                />
+                <label for="email" class="form__label">Email</label>
+              </div>
+
+              <div class="form__group form__group--radio">
+                <div class="form__radio-group">
+                  <input
+                    type="radio"
+                    class="form__radio-input"
+                    id="sell"
+                    value="Quero expor o meu café"
+                    name="subject"
+                  />
+                  <label for="sell" class="form__radio-label">
+                    <span class="form__radio-button"></span>
+                    Quero expor o meu café
+                  </label>
+                </div>
+
+                <div class="form__radio-group">
+                  <input
+                    type="radio"
+                    class="form__radio-input"
+                    id="buy"
+                    value="Quero comprar café"
+                    name="subject"
+                  />
+                  <label for="buy" class="form__radio-label">
+                    <span class="form__radio-button"></span>
+                    Quero comprar café
+                  </label>
+                </div>
+
+                <div class="form__radio-group">
+                  <input
+                    type="radio"
+                    class="form__radio-input"
+                    id="other"
+                    value="Outro"
+                    name="subject"
+                  />
+                  <label for="other" class="form__radio-label">
+                    <span class="form__radio-button"></span>
+                    Outro
+                  </label>
+                </div>
+              </div>
+
+              <div class="form__group form__group--area">
+                <textarea
+                  rows="6"
+                  class="form__input"
+                  placeholder="Alguma coisa a mais que queira dizer pra gente?"
+                  id="message"
+                  name="message"
+                ></textarea>
+                <label for="message" class="form__label">Sua mensagem</label>
+              </div>
+
+              <button class="button form__button">Enviar &rarr;</button>
+            </form>
+
+            <!--LOADER-->
+            <div class="loading hidden" id="loader">
+              <div class="loading__loader hidden" id="loading">
+                <p>Enviando...</p>
+              </div>
+              <div
+                class="loading__message loading__message--success hidden"
+                id="contact-success"
+              >
+                <p>Mensagem enviada com sucesso!</p>
+                <p>Nós agradecemos e iremos retornar assim que possível!</p>
+              </div>
+              <div
+                class="loading__message loading__message--error hidden"
+                id="contact-error"
+              >
+                <p>Houve um erro com o envio do e-mail!</p>
+                <p>
+                  Se possível, tente novamente, ou nos contate diretamente em:
+                  contato@coccamp.com
+                </p>
+                <p>Lamentamos o ocorrido...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Brand logos-->
+      {% include _brands.html %}
+
+      <!-- Footer-->
+      {% include _footer-en.html %}
+    </main>
+
+    <!-- Animation on Scroll-->
+    {% include _aos-init.html %}
+
+    <!-- JS da casa-->
+    {% include _js.html %}
+  </body>
+</html>

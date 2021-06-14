@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    {% include _metadata.html %}
+
+    <!-- Google Fonts-->
+    {% include _gfont.html %}
+
+    <!-- Font-awesome-->
+    {% include _fa.html %}
+
+    <!-- AOS-->
+    {% include _aos.html %}
+
+    <!-- Css da casa-->
+    {% include _css.html %}
+
+    <title>Coccamp | {{ about.pageTitle.en }}</title>
+  </head>
+
+  <body>
+    <!-- Header-->
+    {% include _header-en.html %}
+
+    <main class="main">
+      <section
+        class="hero hero--who"
+        data-aos="zoom-in"
+        data-aos-duration="1000"
+      >
+        <div class="container">
+          <h1 class="hero__title">{{ about.heroText.title.en }}</h1>
+          <p class="hero__subtitle">{{ about.heroText.subtitle.en }}</p>
+        </div>
+        <div class="hero__chevron">
+          <a href="#first-section">
+            <img src="/img/header-chevron-bottom.png" alt="Scroll Down"
+          /></a>
+        </div>
+      </section>
+
+      <section id="first-section" class="section who">
+        <div class="container">
+          <div class="who__box">
+            <div class="who__img who__img--1" data-aos="fade-right">
+              <img src="/img/products.webp" alt="Our products" />
+            </div>
+            <div class="who__text who__text--1" data-aos="fade-left">
+              {{ about.aboutTextOne.en }}
+            </div>
+          </div>
+
+          <div class="who__box">
+            <div
+              class="who__img who__img--2 image-box-lg"
+              data-aos="fade-left"
+              data-aos-duration="900"
+            >
+              <img src="/img/what-grid-1.webp" alt="Our products" />
+            </div>
+
+            <div
+              class="who__text who__text--2"
+              data-aos="fade-right"
+              data-aos-duration="900"
+            >
+              {{ about.aboutTextTwo.en }}
+              <a class="button who__button" href="/en/contact/#form-section"
+                >{{ about.textPartner.en }}</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Brand logos-->
+      {% include _brands.html %}
+
+      <!-- Footer-->
+      {% include _footer-en.html %}
+    </main>
+
+    <!-- Animation on Scroll-->
+    {% include _aos-init.html %}
+
+    <!-- JS da casa-->
+    {% include _js.html %}
+  </body>
+</html>

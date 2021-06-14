@@ -1,0 +1,49 @@
+{% for category in categories -%}
+
+  <div class="product-row">
+
+    <h2 class="product-title">{{ category.name_pt }}</h2>
+    <p class="product-row__text body-text">
+      {{ category.description.pt }}
+    </p>
+
+    <!-- Slider main container -->
+    <div class="swiper-container" id="swiper-products">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+
+        <!-- Slides de cada produto-->
+        {% for product in products -%} 
+
+          {% if product.categoryId == category.id %}
+
+            <div
+              class="swiper-slide swiper-slide-products"
+              data-aos="flip-left"
+            >
+              <div class="product-box">
+                <div class="product-box__head">
+                  <img src="{% imageUrlFor product.image, 280 %}" alt="{{ product.name_pt }}" />
+                </div>
+                <div class="product-box__body">
+                  <img
+                    class="product-box__stars"
+                    src="/img/stars.png"
+                    alt="Coffe Rating"
+                  />
+                  <h3 class="product-box__name">{{ product.name_pt }}</h3>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+
+        {% endfor -%}
+        <!-- END slides de cada produto-->
+      </div>
+
+      <!-- If we need pagination -->
+      <div class="swiper-pagination swiper-pag-products"></div>
+    </div>
+  </div>
+
+{% endfor -%}
